@@ -12,11 +12,11 @@ jobs:
 
     - name: Build the docker image
       run: |
-        docker build -t henryokiyi/k8sapp
+        docker build -t henryokiyi/k8sapp .
 
     - name: Login to docker
       run: |
-        docker login -u "${{ secrets.DOCKERUSERNAME }}" -p "${{ secrets.DOCKERPASSWORD }}" 
+        docker login -u "${{ secrets.DOCKER_USERNAME }}" -p "${{ secrets.DOCKER_PASSWORD }}" 
 
     - name: Push to Docker Hub
       run: |
