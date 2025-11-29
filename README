@@ -1,0 +1,11 @@
+## K8s App
+This is a very simple app for demonstrating how k8s works together with other tools. This is intended for beginners
+
+How to Use
+- Run the file create_repo.sh in the terminal - Run like so:
+```sh
+    sudo chmod u+x create_repo.sh
+    sudo ./create_repo.sh 
+```
+Push to the repo
+Author: Cyclobold Weekend Class

@@ -1,0 +1,23 @@
+name: Simple App Deployment
+on: 
+  push:
+    branches:
+    - master
+jobs:
+  deploymentjob:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout from repo
+      uses: actions/checkout@v4
+
+    - name: Build the docker image
+      run: |
+        docker build -t henryokiyi/k8sapp
+
+    - name: Login to docker
+      run: |
+        docker login -u "${{ secrets.DOCKERUSERNAME }}" -p "${{ secrets.DOCKERPASSWORD }}" 
+
+    - name: Push to Docker Hub
+      run: |
+        docker push "${{ secrets.DOCKERUSERNAME }}/k8sapp"
